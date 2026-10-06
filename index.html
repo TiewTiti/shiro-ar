@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Grumpy Mochi Cat — AR</title>
+<style>
+  html, body { margin:0; height:100%; background:#0d1117; color:#e6edf3;
+    font-family:system-ui, 'Segoe UI', Tahoma, sans-serif; overflow:hidden; }
+  model-viewer { width:100%; height:100%; --poster-color:transparent; }
+  .hud { position:fixed; left:0; right:0; bottom:0; padding:16px 18px 24px;
+    text-align:center; pointer-events:none;
+    background:linear-gradient(to top, rgba(8,11,18,.85), transparent); }
+  .hud h1 { margin:0; font-size:19px; letter-spacing:.3px; }
+  .hud p  { margin:6px 0 0; font-size:13px; color:#9fb2c4; }
+  #ar-button { position:absolute; bottom:96px; left:50%; transform:translateX(-50%);
+    padding:13px 26px; border:none; border-radius:999px; cursor:pointer;
+    font-size:16px; font-weight:700; color:#07131f; background:#7fe0a3;
+    box-shadow:0 8px 26px rgba(0,0,0,.45); }
+</style>
+<script type="module"
+  src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <model-viewer id="mv" src="shiro.glb" ios-src="shiro.usdz"
+      ar ar-modes="webxr scene-viewer quick-look"
+      camera-controls auto-rotate touch-action="pan-y"
+      shadow-intensity="1" exposure="1.05"
+      alt="Grumpy Mochi Cat — โมเดล 3D สำหรับ AR">
+    <button id="ar-button" slot="ar-button">📱 ดูใน AR</button>
+  </model-viewer>
+  <div class="hud">
+    <h1>Grumpy Mochi Cat 🐱</h1>
+    <p>ลากเพื่อหมุน • กด “ดูใน AR” เพื่อวางโมเดลในกล้อง</p>
+  </div>
+</body>
+</html>
